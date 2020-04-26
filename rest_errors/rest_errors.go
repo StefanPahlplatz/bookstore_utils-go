@@ -16,6 +16,15 @@ func NewError(message string) error {
 	return errors.New(message)
 }
 
+func NewRestError(message string, status int, errCode string, causes []interface{}) *RestErr {
+	return &RestErr{
+		Message: message,
+		Status:  status,
+		Error:   errCode,
+		Causes:  causes,
+	}
+}
+
 func NewBadRequestError(message string) *RestErr {
 	return &RestErr{
 		Message: message,
