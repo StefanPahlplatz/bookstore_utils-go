@@ -41,7 +41,7 @@ func NewNotFoundError(message string) *RestErr {
 	}
 }
 
-func NewUnautherizedError() *RestErr {
+func NewUnauthorizedError() *RestErr {
 	return &RestErr{
 		Message: "unable to retrieve user information from given access_token",
 		Status:  http.StatusUnauthorized,
